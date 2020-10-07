@@ -31,3 +31,19 @@ jobs:
         uses: helm/chart-testing-action@v1.1.0
         with:
           command: install
+
+      - uses: docker://quay.io/helmpack/chart-releaser
+        run: cr package
+
+      - name: Deploy to Nexus
+        id: deploy-nexus
+        shell: bash
+        env:
+          USERNAME: ${{ secrets.REPO_USERNAME }}
+          PASSWORD: ${{ secrets.REPO_PASSWORD }}
+        run: |
+          for file in .cr-release-packages; do 
+            if [ -f "$file" ]; then 
+              curl -u $USERNAME:$PASSWORD https://repo.intellectics.io/repository/helm/ --upload-file "$file" -v 
+            fi 
+          done
