@@ -33,7 +33,8 @@ jobs:
           command: install
 
       - uses: docker://quay.io/helmpack/chart-releaser
-        run: cr package
+        with:
+          entrypoint: cr package
 
       - name: Deploy to Nexus
         id: deploy-nexus
