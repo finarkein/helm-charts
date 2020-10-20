@@ -10,7 +10,7 @@ Chart releases must be immutable. Any change to a chart warrants a chart version
 
 The chart `version` should follow [semver](https://semver.org/).
 
-Stable charts should start at `1.0.0` (for maintainability don't create new PRs for stable charts only to meet these criteria, but when reviewing PRs take the opportunity to ensure that this is met).
+Charts should start at `1.0.0` (for maintainability don't create new PRs for stable charts only to meet these criteria, but when reviewing PRs take the opportunity to ensure that this is met).
 
 Any breaking (backwards incompatible) changes to a chart should:
 
@@ -27,10 +27,6 @@ The `Chart.yaml` should be as complete as possible. The following fields are man
 - appVersion
 - description
 - maintainers (name should be Github username)
-
-## Dependencies
-
-Stable charts should not depend on charts in the incubator.
 
 ## Names and Labels
 

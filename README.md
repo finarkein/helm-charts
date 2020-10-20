@@ -20,7 +20,7 @@ You can then run `helm search fa` to see the charts.
 The default repository `stable` for Helm is located at https://kubernetes-charts.storage.googleapis.com/ and is installed by default.
 
 For Helm Stable charts, use `helm install stable/<chart>`.  
-For Finarkein stable charts, just `helm install fa/<chart>`.
+For Finarkein charts, just `helm install fa/<chart>`.
 
 For more information on using Helm, refer to the [Helm documentation](https://github.com/kubernetes/helm#docs).
 
